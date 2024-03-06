@@ -33,7 +33,7 @@ public class SportsStoreTest {
 
     @Test
     public void sportStoreE2E() throws InterruptedException {
-
+    //Home
         driver.findElement(By.linkText("Home")).click();
         {
             List<WebElement> elements =  driver.findElements(By.cssSelector(".card:nth-child(1) h4"));
@@ -51,7 +51,9 @@ public class SportsStoreTest {
             WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
             wait.until(ExpectedConditions.textToBe(By.cssSelector("h2"),"Check out now"));
         }
+    //Order
 
+        //Order Details
         driver.findElement(By.id("Name")).click();
         driver.findElement(By.id("Name")).sendKeys("John Doe");
 
@@ -79,6 +81,9 @@ public class SportsStoreTest {
         driver.findElement(By.name("Country")).click();
         driver.findElement(By.name("Country")).sendKeys("USA");
 
+        //Order Details
+
+        //submitOrder
         driver.findElement(By.xpath("/html/body/div[2]/div[2]/form/div[10]/input")).click();
 
 
@@ -102,7 +107,7 @@ public class SportsStoreTest {
             System.out.println("Element bulunamadı, sayfa yenileniyor...");
             driver.navigate().refresh();
         }
-
+     //Return To store
         driver.findElement(By.xpath("/html/body/div[2]/div/a")).click();
 
     }
